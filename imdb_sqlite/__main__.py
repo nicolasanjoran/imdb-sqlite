@@ -53,25 +53,6 @@ class Column:
 
 # <filename>: ( <table-name>, {<tsv-header>: column} )
 TSV_TABLE_MAP = OrderedDict([
-    ('name.basics.tsv.gz',
-        ('people', OrderedDict([
-            ('nconst',            Column(name='person_id', type='VARCHAR PRIMARY KEY')),
-            ('primaryName',       Column(name='name', index=True)),
-            ('birthYear',         Column(name='born', type='INTEGER')),
-            ('deathYear',         Column(name='died', type='INTEGER')),
-        ]))),
-    ('title.basics.tsv.gz',
-        ('titles', OrderedDict([
-            ('tconst',            Column(name='title_id', type='VARCHAR PRIMARY KEY')),
-            ('titleType',         Column(name='type', index=True)),
-            ('primaryTitle',      Column(name='primary_title', index=True)),
-            ('originalTitle',     Column(name='original_title', index=True)),
-            ('isAdult',           Column(name='is_adult', type='INTEGER')),
-            ('startYear',         Column(name='premiered', type='INTEGER')),
-            ('endYear',           Column(name='ended', type='INTEGER')),
-            ('runtimeMinutes',    Column(name='runtime_minutes', type='INTEGER')),
-            ('genres',            Column(name='genres')),
-        ]))),
     ('title.akas.tsv.gz',
         ('akas', OrderedDict([
             ('titleId',           Column(name='title_id', index=True)),
@@ -81,28 +62,7 @@ TSV_TABLE_MAP = OrderedDict([
             ('types',             Column(name='types')),
             ('attributes',        Column(name='attributes')),
             ('isOriginalTitle',   Column(name='is_original_title', type='INTEGER')),
-        ]))),
-    ('title.principals.tsv.gz',
-        ('crew', OrderedDict([
-            ('tconst',            Column(name='title_id', index=True)),
-            ('nconst',            Column(name='person_id', index=True)),
-            ('category',          Column(name='category')),
-            ('job',               Column(name='job')),
-            ('characters',        Column(name='characters')),
-        ]))),
-    ('title.episode.tsv.gz',
-        ('episodes', OrderedDict([
-            ('tconst',            Column(name='episode_title_id', type='INTEGER', index=True)),
-            ('parentTconst',      Column(name='show_title_id', type='INTEGER', index=True)),
-            ('seasonNumber',      Column(name='season_number', type='INTEGER')),
-            ('episodeNumber',     Column(name='eposide_number', type='INTEGER')),
-        ]))),
-    ('title.ratings.tsv.gz',
-        ('ratings', OrderedDict([
-            ('tconst',            Column(name='title_id', type='VARCHAR PRIMARY KEY')),
-            ('averageRating',     Column(name='rating', type='INTEGER')),
-            ('numVotes',          Column(name='votes', type='INTEGER')),
-        ]))),
+        ])))
 ])
 
 
